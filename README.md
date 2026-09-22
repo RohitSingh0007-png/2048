@@ -116,13 +116,12 @@ Currently **complete** for its intended scope as a PBL submission.
 
 ## Author
 
-Built by **[Your Name]** — Semester 5, Python PBL Project.
+Built by **ROHIT SINGH** — Semester 5
 
 ## References
 
 - [Python `tkinter` documentation](https://docs.python.org/3/library/tkinter.html)
 - [Python `json` documentation](https://docs.python.org/3/library/json.html)
-- [2048 (original game) by Gabriele Cirulli](https://github.com/gabrielecirulli/2048)
 
 ## License
 
