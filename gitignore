@@ -1,0 +1,10 @@
+# Auto-generated leaderboard data (don't commit personal/game data)
+scores.json
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# OS/editor junk
+.DS_Store
+.vscode/
