@@ -1,8 +1,6 @@
 """
-2048 Game - Simple Python (Tkinter) Version
-Semester 5 Python PBL Project
+2048 Game - Simple Python (Tkinter) 
 
-Only basic, beginner-level concepts are used here:
   - Variables, lists (2D list for the board)
   - Functions
   - One simple class to hold the game data
@@ -10,9 +8,6 @@ Only basic, beginner-level concepts are used here:
   - Tkinter basic widgets: Label, Button, Frame, Entry
   - File handling with json (to save/load the leaderboard)
   - Keyboard event binding (bind)
-
-No Canvas, no custom drawing, no animation timers - just plain widgets.
-"""
 
 import tkinter as tk
 from tkinter import messagebox
