@@ -76,7 +76,7 @@ No third-party packages and nothing to `pip install` — a fresh Python 3 instal
 
 **Setup:**
 ```bash
-git clone https://github.com/<your-username>/2048-python-game.git
+git clone https://github.com/RohitSingh0007/2048-python-game.git
 cd 2048-python-game
 python3 2048_game.py
 ```
