@@ -1,6 +1,7 @@
 """
 2048 Game - Simple Python (Tkinter) 
 
+Only basic, beginner-level concepts are used here:
   - Variables, lists (2D list for the board)
   - Functions
   - One simple class to hold the game data
@@ -232,15 +233,9 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("2048")
+        self.geometry("420x620")
+        self.resizable(False, False)
         self.configure(bg=BG_COLOR)
-
-        # Make the window open at full screen size automatically.
-        # winfo_screenwidth()/winfo_screenheight() give the monitor's
-        # size in pixels, and we use that as the window's geometry.
-        screen_width = self.winfo_screenwidth()
-        screen_height = self.winfo_screenheight()
-        self.geometry(f"{screen_width}x{screen_height}+0+0")
-        self.resizable(True, True)
 
         self.game = Game2048()
         self.player_name = "Player"
@@ -283,17 +278,13 @@ class WelcomeFrame(tk.Frame):
     def __init__(self, parent, app):
         super().__init__(parent, bg=BG_COLOR)
 
-        # A small content box, centered in the middle of the full-screen window
-        content = tk.Frame(self, bg=BG_COLOR)
-        content.place(relx=0.5, rely=0.45, anchor="center")
+        tk.Label(self, text="2048", font=(FONT_NAME, 40, "bold"),
+                 fg=BUTTON_COLOR, bg=BG_COLOR).pack(pady=(150, 10))
 
-        tk.Label(content, text="2048", font=(FONT_NAME, 40, "bold"),
-                 fg=BUTTON_COLOR, bg=BG_COLOR).pack(pady=(0, 10))
-
-        tk.Label(content, text="Welcome! The classic tile-merging game.",
+        tk.Label(self, text="Welcome! The classic tile-merging game.",
                  font=(FONT_NAME, 12), fg=MUTED_COLOR, bg=BG_COLOR).pack(pady=(0, 30))
 
-        make_button(content, "Click to Start", BUTTON_COLOR,
+        make_button(self, "Click to Start", BUTTON_COLOR,
                     lambda: app.show_frame(app.name_frame), font_size=13).pack()
 
 
@@ -302,26 +293,22 @@ class NameFrame(tk.Frame):
         super().__init__(parent, bg=BG_COLOR)
         self.app = app
 
-        # A fixed-width content box, centered in the full-screen window
-        content = tk.Frame(self, bg=BG_COLOR, width=360)
-        content.place(relx=0.5, rely=0.45, anchor="center")
+        tk.Label(self, text="2048", font=(FONT_NAME, 28, "bold"),
+                 fg=BUTTON_COLOR, bg=BG_COLOR).pack(pady=(30, 15))
 
-        tk.Label(content, text="2048", font=(FONT_NAME, 28, "bold"),
-                 fg=BUTTON_COLOR, bg=BG_COLOR).pack(pady=(0, 15))
-
-        tk.Label(content, text="Top 3 Scores", font=(FONT_NAME, 14, "bold"),
+        tk.Label(self, text="Top 3 Scores", font=(FONT_NAME, 14, "bold"),
                  fg=TEXT_COLOR, bg=BG_COLOR).pack(pady=(10, 5))
 
-        self.leaderboard_frame = tk.Frame(content, bg=PANEL_COLOR)
-        self.leaderboard_frame.pack(pady=5, fill="x")
+        self.leaderboard_frame = tk.Frame(self, bg=PANEL_COLOR)
+        self.leaderboard_frame.pack(padx=40, pady=5, fill="x")
 
-        tk.Label(content, text="Enter your name:", font=(FONT_NAME, 12),
+        tk.Label(self, text="Enter your name:", font=(FONT_NAME, 12),
                  fg=MUTED_COLOR, bg=BG_COLOR).pack(pady=(30, 5))
 
-        self.name_entry = tk.Entry(content, font=(FONT_NAME, 13), justify="center")
-        self.name_entry.pack(pady=5, ipady=5, fill="x")
+        self.name_entry = tk.Entry(self, font=(FONT_NAME, 13), justify="center")
+        self.name_entry.pack(pady=5, ipady=5, padx=40, fill="x")
 
-        make_button(content, "Start Game", BUTTON_COLOR,
+        make_button(self, "Start Game", BUTTON_COLOR,
                     self.start_game, font_size=13).pack(pady=25)
 
     def on_show(self):
@@ -370,17 +357,14 @@ class InstructionsFrame(tk.Frame):
     def __init__(self, parent, app):
         super().__init__(parent, bg=BG_COLOR)
 
-        content = tk.Frame(self, bg=BG_COLOR)
-        content.place(relx=0.5, rely=0.45, anchor="center")
+        tk.Label(self, text="How to Play", font=(FONT_NAME, 20, "bold"),
+                 fg=BUTTON_COLOR, bg=BG_COLOR).pack(pady=(60, 20))
 
-        tk.Label(content, text="How to Play", font=(FONT_NAME, 20, "bold"),
-                 fg=BUTTON_COLOR, bg=BG_COLOR).pack(pady=(0, 20))
-
-        tk.Label(content, text=INSTRUCTIONS_TEXT, font=(FONT_NAME, 11),
+        tk.Label(self, text=INSTRUCTIONS_TEXT, font=(FONT_NAME, 11),
                  fg=TEXT_COLOR, bg=BG_COLOR, justify="left",
-                 wraplength=340).pack()
+                 wraplength=340).pack(padx=30)
 
-        make_button(content, "Let's Play!", BUTTON_COLOR2,
+        make_button(self, "Let's Play!", BUTTON_COLOR2,
                     lambda: app.show_frame(app.game_frame), font_size=13).pack(pady=30)
 
 
@@ -390,13 +374,9 @@ class GameFrame(tk.Frame):
         self.app = app
         self.best_score = 0
 
-        # A fixed-width content box, centered in the full-screen window
-        content = tk.Frame(self, bg=BG_COLOR)
-        content.place(relx=0.5, rely=0.45, anchor="center")
-
         # ---- Header: title + score boxes ----
-        header = tk.Frame(content, bg=BG_COLOR)
-        header.pack(fill="x", pady=15)
+        header = tk.Frame(self, bg=BG_COLOR)
+        header.pack(fill="x", padx=15, pady=15)
 
         tk.Label(header, text="2048", font=(FONT_NAME, 26, "bold"),
                  fg=BUTTON_COLOR, bg=BG_COLOR).pack(side="left")
@@ -418,16 +398,16 @@ class GameFrame(tk.Frame):
         self.best_label.pack(padx=15, pady=(0, 5))
 
         # ---- Control buttons ----
-        controls = tk.Frame(content, bg=BG_COLOR)
-        controls.pack(fill="x")
+        controls = tk.Frame(self, bg=BG_COLOR)
+        controls.pack(fill="x", padx=15)
         make_button(controls, "New Game", BUTTON_COLOR, self.new_game,
                     font_size=11, padx=15, pady=6).pack(side="left")
         make_button(controls, "How to Play", BUTTON_COLOR2, self.show_instructions,
                     font_size=11, padx=15, pady=6).pack(side="right")
 
         # ---- The board: a simple grid of Label widgets ----
-        board_frame = tk.Frame(content, bg=BOARD_COLOR)
-        board_frame.pack(pady=15)
+        board_frame = tk.Frame(self, bg=BOARD_COLOR)
+        board_frame.pack(padx=15, pady=15)
 
         self.cells = []  # 2D list of Label widgets, one per board cell
         for r in range(SIZE):
