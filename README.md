@@ -1,6 +1,5 @@
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![Tkinter](https://img.shields.io/badge/GUI-Tkinter-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
 
 # 2048 — Python Edition
@@ -39,8 +38,6 @@ A move happens in three steps per row: **compress** (slide non-zero tiles togeth
 See [`2048_game.py`](2048_game.py) — the whole project is intentionally kept in a single, readable file.
 
 ## Demo
-
-> 🎬 Demo video/GIF coming soon.
 
 The game opens full-screen: a Welcome screen, then a name-entry screen showing the live Top-3 leaderboard, then a short instructions screen, then the game itself. Score and Best Score update live in the header as tiles merge, and on game over the final score is saved automatically and the updated leaderboard is shown.
 
@@ -123,6 +120,3 @@ Built by **ROHIT SINGH** — Semester 5
 - [Python `tkinter` documentation](https://docs.python.org/3/library/tkinter.html)
 - [Python `json` documentation](https://docs.python.org/3/library/json.html)
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
