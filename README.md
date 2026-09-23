@@ -1,5 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![Tkinter](https://img.shields.io/badge/GUI-Tkinter-blue.svg)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)
 
 # 2048 — Python Edition
@@ -124,3 +125,6 @@ Currently **complete** for its intended scope as a PBL submission.
 - [Python `tkinter` documentation](https://docs.python.org/3/library/tkinter.html)
 - [Python `json` documentation](https://docs.python.org/3/library/json.html)
 
+## License
+
+- This project is licensed under the MIT License.
