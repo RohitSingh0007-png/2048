@@ -20,7 +20,7 @@
 - [Project Status](#project-status)
 - [Scope & Limitations](#scope--limitations)
 - [Future Work](#future-work)
-- [Team]
+- [Team](#team)
 - [References](#references)
 - [License](#license)
 
@@ -113,7 +113,11 @@ Currently **complete** for its intended scope as a PBL submission.
 
 ## Team
 
-Built by **ROHIT SINGH** — 
+| Name | Role |
+|---|---|
+| Rohit Singh | Team Lead |
+| Pranjal Rawat | Member |
+
 
 ## References
 
