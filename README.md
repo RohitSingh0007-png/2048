@@ -20,7 +20,7 @@
 - [Project Status](#project-status)
 - [Scope & Limitations](#scope--limitations)
 - [Future Work](#future-work)
-- [Author](#author)
+- [Team]
 - [References](#references)
 - [License](#license)
 
@@ -111,9 +111,9 @@ Currently **complete** for its intended scope as a PBL submission.
 - Make board size configurable (e.g. 5×5, 6×6) from the Welcome screen
 - Add a light "how you're doing vs. your best" progress indicator
 
-## Author
+## Team
 
-Built by **ROHIT SINGH** — Semester 5
+Built by **ROHIT SINGH** — 
 
 ## References
 
